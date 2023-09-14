@@ -14,6 +14,8 @@ export const CreatePublications = () => {
         fecha_fin_publicacion: '',
     });
 
+    const [imagenSet, setImagenSet] = useState( null)
+
     const handleSubmit = (e) => {
         e.preventDefault();
         sondeoPost();
@@ -30,7 +32,12 @@ export const CreatePublications = () => {
 
     const sondeoPost = async () => {
         try {
-            var result = await postExample(dataSondeo);
+            var formData = new FormData()
+            formData.append("tema_sondeo", dataSondeo.tema_sondeo)
+            formData.append("imagen", dataSondeo.imagen)
+            formData.append("fecha_publicacion", dataSondeo.fecha_publicacion)
+            formData.append("fecha_fin_publicacion", dataSondeo.fecha_fin_publicacion)
+            var result = await postExample(formData);
             console.log('result pet' + result);
         } catch (error) {
             console.log('Error al realizar la solicitud post ', error)
@@ -38,13 +45,18 @@ export const CreatePublications = () => {
     }
 
     const handleUploadImage = async (e) => {
-        const dataImage = await ImagetoBase64(e.target.files[0]);
+        const dataImage = e.target.files[0]
+        const reader = new FileReader()
         setDataSondeo((prev) => {
             return {
                 ...prev,
                 imagen: dataImage
             }
         })
+        reader.onload = ()=>{
+            setImagenSet(reader.result)
+        }
+        reader.readAsDataURL(dataImage)
     }
 
     return (
@@ -87,7 +99,7 @@ export const CreatePublications = () => {
                                     />
 
                                     {
-                                        dataSondeo.imagen ? <img className='displayImg' src={dataSondeo.imagen} /> : <FaPlus className='icon fa-lg'></FaPlus>
+                                        imagenSet ? <img className='displayImg' src={imagenSet} /> : <FaPlus className='icon fa-lg'></FaPlus>
                                     }
                                 </div>
 
