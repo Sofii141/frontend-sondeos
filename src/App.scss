@@ -1,0 +1,63 @@
+// Login new Section
+:root {
+    /* matiz, saturación y luminosidad */
+    --primaryColor: hsl(280, 4%, 59%);
+    --HoverColor: #95a1b6;
+    --paleGreen: hsl(96, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --bgColor: hsl(220, 10%, 94%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+  
+    /* Font typography */
+  
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1rem;
+    --normalFontSize: 0.938rem;
+    --smallFontSize: 0.813rem;
+    --smallestFontSize: 0.75rem;
+} 
+
+.message {
+    display: none;
+}
+
+.showMessage {
+    display: block;
+    color: var(--whiteColor);
+    background: rgb(255, 90, 90) ;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: .8rem 1rem;
+    color: var(--greyText);
+}
+
+.btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: .8rem 1rem;
+    color: var(--greyText);
+}
+
+.btn .icon {
+    margin-left: .5rem;
+}
+
+.btn:hover {
+    color: var(--primaryColor);
+    background: var(--paleGreen);
+}
+

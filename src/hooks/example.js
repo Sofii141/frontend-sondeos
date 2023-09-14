@@ -1,0 +1,25 @@
+
+// userData.js
+export const datUser = {
+    tipo_documento: '',
+    numero_documento: '',
+    nombres_completos: '',
+    apellidos_completos: '',
+    sexo: '',
+    correo_electronico: '',
+    municipio: '',
+    direccion: '',
+    barrio_vereda: '',
+    fecha_nacimiento: '',
+    etnia: '',
+    condicion_discapacidad: '',
+    estrato_residencial: '',
+    ultimo_nivel_educativo: '',
+    dispositivo_tecnologico: '',
+    password: '',
+    telefono_celular: '',
+    telefono_fijo: '',
+    password_confirmation: '',
+    conectividad_internet: '',
+    regimen_afiliacion: '',
+};
